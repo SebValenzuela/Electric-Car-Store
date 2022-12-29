@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container_principal {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 2fr 10fr 1fr;
+    grid-template-areas: "nav""menu""main""footer";
+    text-align: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #01579B;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+nav ul {
+    display: none;
+    list-style: none;
+}
+
+.fa-solid.fa-car-circle-bolt {
+    color: white;
+    height: 24px;
+    width: 24px;
+}
+
+main {
+    grid-area: main;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #E1E2E1;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #002F6C;
+    color: white;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+}
+
+main .paginador {
+    display: flex;
+    justify-content: center;
+}
+
+main .autos {
+    overflow-y: scroll;
+    height: 65vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media all and (min-width: 576px) {
+    .container_principal {
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-areas: "nav menu" "nav main" "footer main";
+    }
+
+    main .autos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    nav .nav_icon {
+        display: none;
+    }
+
+    nav .nav_secciones {
+        display: flex;
+        flex-direction: column;
+    }
+}
